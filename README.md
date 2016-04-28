@@ -31,26 +31,42 @@
 
 ## <a id="初始化"></a>初始化
 根据表名初始化
-`+ (WZXDataManager *)managerWithTable:(NSString *)modelName;`
+```objc
++ (WZXDataManager *)managerWithTable:(NSString *)modelName;`
+```
 
 ## <a id="插入数据"></a>插入数据
-`-(void)insert:(WZXModel *)model;`
+```objc
+-(void)insert:(WZXModel *)model;
+```
 
 ## <a id="更新数据"></a>更新数据
 根据model和主键更新数据
-`-(void)update:(WZXModel *)model withMainKey:(NSString *)key;`
+```objc
+-(void)update:(WZXModel *)model withMainKey:(NSString *)key;
+```
 
 ## <a id="删除数据"></a>删除数据
 根据model删除数据
-`-(void)remove:(WZXModel *)model;`
+```objc
+-(void)remove:(WZXModel *)model;
+```
 根据model和主键删除数据
-`-(void)remove:(WZXModel *)model withMainKey:(NSString *)key;`
+```objc
+-(void)remove:(WZXModel *)model withMainKey:(NSString *)key;
+```
 根据表名删除所有数据
-`-(void)removeAll:(NSString *)tableName;`
+```objc
+-(void)removeAll:(NSString *)tableName;
+```
 
 ## <a id="查询数据"></a>查询数据
 根据字典查询数据
-`-(NSArray<WZXModel *> * )fetch:(NSDictionary *)dic;`
+```objc
+-(NSArray<WZXModel *> * )fetch:(NSDictionary *)dic;
+```
 根据表名查询所有数据
-`-(NSArray<WZXModel *> * )fetchAll:(NSString *)modelName;`
+```objc
+-(NSArray<WZXModel *> * )fetchAll:(NSString *)modelName;
+```
 
