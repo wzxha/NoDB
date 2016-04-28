@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B7914501CD1DE1A0088B90A /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7914401CD1DE1A0088B90A /* DataManager.m */; };
+		4B7914501CD1DE1A0088B90A /* WZXDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7914401CD1DE1A0088B90A /* WZXDataManager.m */; };
 		4B7914511CD1DE1A0088B90A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7914431CD1DE1A0088B90A /* FMDatabase.m */; };
 		4B7914521CD1DE1A0088B90A /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7914451CD1DE1A0088B90A /* FMDatabaseAdditions.m */; };
 		4B7914531CD1DE1A0088B90A /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7914471CD1DE1A0088B90A /* FMDatabasePool.m */; };
@@ -45,8 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B79143F1CD1DE1A0088B90A /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
-		4B7914401CD1DE1A0088B90A /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		4B79143F1CD1DE1A0088B90A /* WZXDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZXDataManager.h; sourceTree = "<group>"; };
+		4B7914401CD1DE1A0088B90A /* WZXDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZXDataManager.m; sourceTree = "<group>"; };
 		4B7914421CD1DE1A0088B90A /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		4B7914431CD1DE1A0088B90A /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		4B7914441CD1DE1A0088B90A /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 		4B79143E1CD1DE1A0088B90A /* WZXDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				4B79143F1CD1DE1A0088B90A /* DataManager.h */,
-				4B7914401CD1DE1A0088B90A /* DataManager.m */,
+				4B79143F1CD1DE1A0088B90A /* WZXDataManager.h */,
+				4B7914401CD1DE1A0088B90A /* WZXDataManager.m */,
 				4B7914411CD1DE1A0088B90A /* fmdb */,
 				4B79144E1CD1DE1A0088B90A /* WZXModel.h */,
 				4B79144F1CD1DE1A0088B90A /* WZXModel.m */,
@@ -337,7 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF696CB1CD065C800531F10 /* ViewController.m in Sources */,
-				4B7914501CD1DE1A0088B90A /* DataManager.m in Sources */,
+				4B7914501CD1DE1A0088B90A /* WZXDataManager.m in Sources */,
 				4B999D551CD08CDA00B51836 /* PersonModel.m in Sources */,
 				4B7914511CD1DE1A0088B90A /* FMDatabase.m in Sources */,
 				4B7914551CD1DE1A0088B90A /* FMResultSet.m in Sources */,

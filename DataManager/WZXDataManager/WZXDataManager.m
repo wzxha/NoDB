@@ -6,17 +6,17 @@
 //  Copyright © 2016年 wzx. All rights reserved.
 //
 
-#import "DataManager.h"
+#import "WZXDataManager.h"
 #import "FMDatabase.h"
 #import <objc/runtime.h>
 NSString * const W_TABLE_NAME = @"W_TABLE_NAME";
-@interface DataManager()
+@interface WZXDataManager()
 @property(nonatomic,strong)FMDatabase * db;
 @end
-@implementation DataManager
+@implementation WZXDataManager
 
-+ (DataManager *)managerWithTable:(NSString *)modelName {
-    return [[DataManager alloc]initWithTable:modelName];
++ (WZXDataManager *)managerWithTable:(NSString *)modelName {
+    return [[WZXDataManager alloc]initWithTable:modelName];
 }
 
 - (instancetype)initWithTable:(NSString *)modelName {

@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "WZXModel.h"
 extern NSString * const W_TABLE_NAME;
-@interface DataManager : NSObject
+@interface WZXDataManager : NSObject
 
-+ (DataManager *)managerWithTable:(NSString *)modelName;
++ (WZXDataManager *)managerWithTable:(NSString *)modelName;
 
 - (void)insert:(WZXModel *)model;
 

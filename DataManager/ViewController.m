@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "PersonModel.h"
-#import "DataManager.h"
+#import "WZXDataManager.h"
 @interface ViewController ()
 
 @end
@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DataManager * manager = [DataManager managerWithTable:@"PersonModel"];
+    WZXDataManager * manager = [WZXDataManager managerWithTable:@"PersonModel"];
     PersonModel * model = [[PersonModel alloc]init];
     model.name = @"0";
     model.isHave = 1;
