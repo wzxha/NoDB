@@ -30,12 +30,14 @@
 - [查询数据](#查询数据)
 
 ## <a id="初始化"></a>初始化
-`[WZXDataManager managerWithTable:@"PersonModel"];`
+根据表名初始化
+`+ (WZXDataManager *)managerWithTable:(NSString *)modelName;`
 
 ## <a id="插入数据"></a>插入数据
 `-(void)insert:(WZXModel *)model;`
 
 ## <a id="更新数据"></a>更新数据
+根据model和主键更新数据
 `-(void)update:(WZXModel *)model withMainKey:(NSString *)key;`
 
 ## <a id="删除数据"></a>删除数据
