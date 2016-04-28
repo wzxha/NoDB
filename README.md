@@ -1,8 +1,11 @@
 # WZXDataManager
+[![License](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Wzxhaha/WZXDataManager/blob/master/LICENSE)
+<br>
 二次封装fmdb，使用更加简单
 
 #WZXDataManager的优点
 使用简单
+- 在工程中加入`libsqlite3`库。
 - 创建一个继承于`WZXModel`的Model，并在其中加入各种属性。
 ```objc
 @interface PersonModel : WZXModel
