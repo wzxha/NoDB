@@ -23,17 +23,17 @@
 **现在你已经创建好了一个表**。
 
 #API
-- - (WZXDataManager *)managerWithTable:(NSString *)modelName;
+-- (WZXDataManager *)managerWithTable:(NSString *)modelName;
 
-- - (void)insert:(WZXModel *)model;
+-- (void)insert:(WZXModel *)model;
 
-- - (void)update:(WZXModel *)model withMainKey:(NSString *)key;
+-- (void)update:(WZXModel *)model withMainKey:(NSString *)key;
 
-- - (void)remove:(WZXModel *)model;
-- - (void)remove:(WZXModel *)model withMainKey:(NSString *)key;
-- - (void)removeAll:(NSString *)tableName;
+-- (void)remove:(WZXModel *)model;
+-- (void)remove:(WZXModel *)model withMainKey:(NSString *)key;
+-- (void)removeAll:(NSString *)tableName;
 
-- - (NSArray<WZXModel *> * )fetch:(NSDictionary *)dic;
+-- (NSArray<WZXModel *> * )fetch:(NSDictionary *)dic;
 
-- - (NSArray<WZXModel *> * )fetchAll:(NSString *)modelName; 
+-- (NSArray<WZXModel *> * )fetchAll:(NSString *)modelName; 
 
