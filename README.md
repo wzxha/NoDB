@@ -15,11 +15,25 @@
 
 目前只支持这些类型
 ```
-- 在`WZXDataManager`的方法中传入表名
-```
+- 在`WZXDataManager`的初始化方法中传入表名
+```objc
 [WZXDataManager managerWithTable:@"PersonModel"];
 ```
 
 **现在你已经创建好了一个表**。
 
+#API
+- (WZXDataManager *)managerWithTable:(NSString *)modelName;
+
+- (void)insert:(WZXModel *)model;
+
+- (void)update:(WZXModel *)model withMainKey:(NSString *)key;
+
+- (void)remove:(WZXModel *)model;
+- (void)remove:(WZXModel *)model withMainKey:(NSString *)key;
+- (void)removeAll:(NSString *)tableName;
+
+- (NSArray<WZXModel *> * )fetch:(NSDictionary *)dic;
+
+- (NSArray<WZXModel *> * )fetchAll:(NSString *)modelName; 
 
