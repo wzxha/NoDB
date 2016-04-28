@@ -23,17 +23,32 @@
 **现在你已经创建好了一个表**。
 
 #API
-- -(WZXDataManager *)managerWithTable:(NSString *)modelName;
+- [初始化](#初始化)
+- [插入数据](#插入数据)
+- [更新数据](#更新数据)
+- [删除数据](#删除数据)
+- [查询数据](#查询数据)
 
-- -(void)insert:(WZXModel *)model;
+## <a id="初始化"></a>初始化
+`[WZXDataManager managerWithTable:@"PersonModel"];`
 
-- -(void)update:(WZXModel *)model withMainKey:(NSString *)key;
+## <a id="插入数据"></a>插入数据
+`-(void)insert:(WZXModel *)model;`
 
-- -(void)remove:(WZXModel *)model;
-- -(void)remove:(WZXModel *)model withMainKey:(NSString *)key;
-- -(void)removeAll:(NSString *)tableName;
+## <a id="更新数据"></a>更新数据
+`-(void)update:(WZXModel *)model withMainKey:(NSString *)key;`
 
-- -(NSArray<WZXModel *> * )fetch:(NSDictionary *)dic;
+## <a id="删除数据"></a>删除数据
+根据model删除数据
+`-(void)remove:(WZXModel *)model;`
+根据model和主键删除数据
+`-(void)remove:(WZXModel *)model withMainKey:(NSString *)key;`
+根据表名删除所有数据
+`-(void)removeAll:(NSString *)tableName;`
 
-- -(NSArray<WZXModel *> * )fetchAll:(NSString *)modelName; 
+## <a id="查询数据"></a>查询数据
+根据字典查询数据
+`-(NSArray<WZXModel *> * )fetch:(NSDictionary *)dic;`
+根据表名查询所有数据
+`-(NSArray<WZXModel *> * )fetchAll:(NSString *)modelName;`
 
