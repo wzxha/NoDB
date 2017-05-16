@@ -7,80 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E27AC901ECAD2B100B51F9F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E27AC8F1ECAD2B100B51F9F /* libsqlite3.0.tbd */; };
-		1E27AC951ECAE5F600B51F9F /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27AC941ECAE5F600B51F9F /* SQLite.swift */; };
-		1E27AC971ECB043600B51F9F /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27AC961ECB043600B51F9F /* Table.swift */; };
-		1E27AC991ECB054300B51F9F /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27AC981ECB054300B51F9F /* Property.swift */; };
-		OBJ_20 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Manager.swift */; };
-		OBJ_27 /* NoDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* NoDBTests.swift */; };
-		OBJ_29 /* NoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* NoDB.framework */; };
+		OBJ_23 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Manager.swift */; };
+		OBJ_24 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Property.swift */; };
+		OBJ_25 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SQLite.swift */; };
+		OBJ_26 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Table.swift */; };
+		OBJ_33 /* NoDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* NoDBTests.swift */; };
+		OBJ_35 /* NoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* NoDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1E27AC8D1ECAD1B900B51F9F /* PBXContainerItemProxy */ = {
+		1E0729851ECB2235004D5B81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_15;
+			remoteGlobalIDString = OBJ_18;
 			remoteInfo = NoDB;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E27AC8F1ECAD2B100B51F9F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		1E27AC931ECAE2FA00B51F9F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		1E27AC941ECAE5F600B51F9F /* SQLite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
-		1E27AC961ECB043600B51F9F /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
-		1E27AC981ECB054300B51F9F /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
-		OBJ_11 /* NoDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDBTests.swift; sourceTree = "<group>"; };
-		OBJ_13 /* NoDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NoDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_14 /* NoDBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = NoDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		OBJ_14 /* NoDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDBTests.swift; sourceTree = "<group>"; };
+		OBJ_16 /* NoDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NoDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_17 /* NoDBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = NoDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_8 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_21 /* Frameworks */ = {
+		OBJ_27 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				1E27AC901ECAD2B100B51F9F /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_28 /* Frameworks */ = {
+		OBJ_34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_29 /* NoDB.framework in Frameworks */,
+				OBJ_35 /* NoDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E27AC8E1ECAD2B100B51F9F /* Frameworks */ = {
+		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1E27AC8F1ECAD2B100B51F9F /* libsqlite3.0.tbd */,
+				OBJ_13 /* NoDBTests */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_10 /* NoDBTests */ = {
+		OBJ_13 /* NoDBTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* NoDBTests.swift */,
+				OBJ_14 /* NoDBTests.swift */,
 			);
 			name = NoDBTests;
 			path = Tests/NoDBTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_12 /* Products */ = {
+		OBJ_15 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_13 /* NoDB.framework */,
-				OBJ_14 /* NoDBTests.xctest */,
+				OBJ_16 /* NoDB.framework */,
+				OBJ_17 /* NoDBTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -90,9 +86,8 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_9 /* Tests */,
-				OBJ_12 /* Products */,
-				1E27AC8E1ECAD2B100B51F9F /* Frameworks */,
+				OBJ_12 /* Tests */,
+				OBJ_15 /* Products */,
 			);
 			name = "";
 			sourceTree = "<group>";
@@ -100,32 +95,23 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1E27AC931ECAE2FA00B51F9F /* Bridging-Header.h */,
 				OBJ_8 /* Manager.swift */,
-				1E27AC941ECAE5F600B51F9F /* SQLite.swift */,
-				1E27AC961ECB043600B51F9F /* Table.swift */,
-				1E27AC981ECB054300B51F9F /* Property.swift */,
+				OBJ_11 /* Table.swift */,
+				OBJ_9 /* Property.swift */,
+				OBJ_10 /* SQLite.swift */,
 			);
 			path = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_9 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_10 /* NoDBTests */,
-			);
-			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_15 /* NoDB */ = {
+		OBJ_18 /* NoDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_16 /* Build configuration list for PBXNativeTarget "NoDB" */;
+			buildConfigurationList = OBJ_19 /* Build configuration list for PBXNativeTarget "NoDB" */;
 			buildPhases = (
-				OBJ_19 /* Sources */,
-				OBJ_21 /* Frameworks */,
+				OBJ_22 /* Sources */,
+				OBJ_27 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,24 +119,24 @@
 			);
 			name = NoDB;
 			productName = NoDB;
-			productReference = OBJ_13 /* NoDB.framework */;
+			productReference = OBJ_16 /* NoDB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_22 /* NoDBTests */ = {
+		OBJ_28 /* NoDBTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_23 /* Build configuration list for PBXNativeTarget "NoDBTests" */;
+			buildConfigurationList = OBJ_29 /* Build configuration list for PBXNativeTarget "NoDBTests" */;
 			buildPhases = (
-				OBJ_26 /* Sources */,
-				OBJ_28 /* Frameworks */,
+				OBJ_32 /* Sources */,
+				OBJ_34 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_30 /* PBXTargetDependency */,
+				OBJ_36 /* PBXTargetDependency */,
 			);
 			name = NoDBTests;
 			productName = NoDBTests;
-			productReference = OBJ_14 /* NoDBTests.xctest */;
+			productReference = OBJ_17 /* NoDBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -169,48 +155,48 @@
 				en,
 			);
 			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_12 /* Products */;
+			productRefGroup = OBJ_15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_15 /* NoDB */,
-				OBJ_22 /* NoDBTests */,
+				OBJ_18 /* NoDB */,
+				OBJ_28 /* NoDBTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_19 /* Sources */ = {
+		OBJ_22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				1E27AC971ECB043600B51F9F /* Table.swift in Sources */,
-				OBJ_20 /* Manager.swift in Sources */,
-				1E27AC991ECB054300B51F9F /* Property.swift in Sources */,
-				1E27AC951ECAE5F600B51F9F /* SQLite.swift in Sources */,
+				OBJ_23 /* Manager.swift in Sources */,
+				OBJ_24 /* Property.swift in Sources */,
+				OBJ_25 /* SQLite.swift in Sources */,
+				OBJ_26 /* Table.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_26 /* Sources */ = {
+		OBJ_32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_27 /* NoDBTests.swift in Sources */,
+				OBJ_33 /* NoDBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_30 /* PBXTargetDependency */ = {
+		OBJ_36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_15 /* NoDB */;
-			targetProxy = 1E27AC8D1ECAD1B900B51F9F /* PBXContainerItemProxy */;
+			target = OBJ_18 /* NoDB */;
+			targetProxy = 1E0729851ECB2235004D5B81 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_17 /* Debug */ = {
+		OBJ_20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -226,14 +212,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NoDB;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos10.3;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Sources/Bridging-Header.h";
 				TARGET_NAME = NoDB;
 			};
 			name = Debug;
 		};
-		OBJ_18 /* Release */ = {
+		OBJ_21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -249,44 +233,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NoDB;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos10.3;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Sources/Bridging-Header.h";
 				TARGET_NAME = NoDB;
-			};
-			name = Release;
-		};
-		OBJ_24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NoDB.xcodeproj/NoDBTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				TARGET_NAME = NoDBTests;
-			};
-			name = Debug;
-		};
-		OBJ_25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NoDB.xcodeproj/NoDBTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				TARGET_NAME = NoDBTests;
 			};
 			name = Release;
 		};
@@ -304,14 +252,48 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.3;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
+		};
+		OBJ_30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NoDB.xcodeproj/NoDBTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = NoDBTests;
+			};
+			name = Debug;
+		};
+		OBJ_31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NoDB.xcodeproj/NoDBTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = NoDBTests;
+			};
+			name = Release;
 		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -325,8 +307,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos10.3;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -337,11 +319,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_16 /* Build configuration list for PBXNativeTarget "NoDB" */ = {
+		OBJ_19 /* Build configuration list for PBXNativeTarget "NoDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_17 /* Debug */,
-				OBJ_18 /* Release */,
+				OBJ_20 /* Debug */,
+				OBJ_21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -355,11 +337,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_23 /* Build configuration list for PBXNativeTarget "NoDBTests" */ = {
+		OBJ_29 /* Build configuration list for PBXNativeTarget "NoDBTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_24 /* Debug */,
-				OBJ_25 /* Release */,
+				OBJ_30 /* Debug */,
+				OBJ_31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

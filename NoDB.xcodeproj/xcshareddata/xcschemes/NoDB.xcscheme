@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_15"
+               BlueprintIdentifier = "OBJ_18"
                BuildableName = "NoDB.framework"
                BlueprintName = "NoDB"
                ReferencedContainer = "container:NoDB.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_22"
+               BlueprintIdentifier = "OBJ_28"
                BuildableName = "NoDBTests.xctest"
                BlueprintName = "NoDBTests"
                ReferencedContainer = "container:NoDB.xcodeproj">
@@ -55,7 +55,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_15"
+            BlueprintIdentifier = "OBJ_18"
             BuildableName = "NoDB.framework"
             BlueprintName = "NoDB"
             ReferencedContainer = "container:NoDB.xcodeproj">

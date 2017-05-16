@@ -40,15 +40,22 @@ public struct Manager<SQLite: SQLiteDBable> {
     
     static func insert<T: Tableable>(model: T) {
         SQLite.shared.open {
-            $0.execute(sql: model.updateSQL, parameters: model.propertys.map { $0.value ?? "" })
+            $0.execute(sql: model.updateSQL, parameters: model.values)
         }
     }
     
-    static func fetch<T: Tableable>(model: T, propertys: [Property]? = nil) -> [T]? {
+    static func fetch<T: Tableable>(model: T) -> [T]? {
         SQLite.shared.open {
-           return $0.query(sql: model.name, parameters: nil)
+            return $0.query(sql: model.fetchSQL, parameters: model.values)
         }
-        return []
+        
+        return nil
+    }
+    
+    static func delete<T: Tableable>(model: T) {
+        SQLite.shared.open {
+            $0.execute(sql: model.deleteSQL, parameters: model.values)
+        }
     }
 }
 

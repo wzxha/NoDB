@@ -36,24 +36,32 @@ internal enum SQLType: String {
     case int  = "INTEGER"
     
     case text = "TEXT"
+    
+    case date = "DATE"
 }
 
 public struct Property {
-    public enum `Type` {
+    
+    public let key: String
+    
+    public let value: Any?
+    
+    public enum PropertyType {
         case array
         
         case dictionary
         
-        case bool
-        
         case int
+        
+        case bool
         
         case string
         
+        case date
+        
         internal var sql: SQLType {
             switch self {
-            case .array: fallthrough
-            case .dictionary:
+            case .array, .dictionary:
                 return .blob
             case .bool:
                 return .bool
@@ -61,20 +69,22 @@ public struct Property {
                 return .int
             case .string:
                 return .text
+            case .date:
+                return .date
             }
         }
     }
     
-    public let key: String
+    public let type: PropertyType
     
-    public let value: Any?
-    
-    public let type: Type
-}
-
-extension Property {
-    internal var sql: String {
-        return "\(key) \(type.sql.rawValue)"
+    internal var _value: Any? {
+        guard let value = value else { return nil }
+        
+        switch type.sql {
+        case .blob:
+            return NSKeyedArchiver.archivedData(withRootObject: value)
+        default:
+            return value
+        }
     }
 }
-

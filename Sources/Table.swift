@@ -37,6 +37,12 @@ public protocol Tableable: class {
 }
 
 extension Tableable {
+    var values: [Any]? {
+        return propertys.flatMap { $0._value }
+    }
+}
+
+extension Tableable {
     internal var createSQL: String {
         var sql =  "CREATE TABLE IF NOT EXISTS \(name)"
         sql += "("
@@ -44,7 +50,7 @@ extension Tableable {
         
         propertys.forEach {
             sql += ","
-            sql += $0.sql
+            sql += "\($0.key) \($0.type.sql.rawValue)"
         }
         
         sql += ")"
@@ -63,6 +69,35 @@ extension Tableable {
         sql.remove(at: sql.index(before: sql.endIndex))
         
         sql += ")"
+        
+        return sql
+    }
+    
+    internal var fetchSQL: String {
+        let baseSQL = "SELECT * FROM \(name)"
+        return equalSQL(withBase: baseSQL)
+    }
+    
+    internal var deleteSQL: String {
+        let baseSQL = "DELETE FROM \(name)"
+        return equalSQL(withBase: baseSQL)
+    }
+    
+    private func equalSQL(withBase base: String) -> String {
+        var sql = base + " WHERE "
+        
+        propertys.forEach {
+            if $0.value != nil {
+                sql += $0.key
+                sql += "=? AND "
+            }
+        }
+        
+        if base.utf8.count + " WHERE ".utf8.count == sql.utf8.count {
+            sql.removeSubrange(sql.index(sql.endIndex, offsetBy: -(" WHERE ".utf8.count))..<sql.endIndex)
+        } else {
+            sql.removeSubrange(sql.index(sql.endIndex, offsetBy: -(" AND ".utf8.count))..<sql.endIndex)
+        }
         
         return sql
     }
