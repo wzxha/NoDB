@@ -40,7 +40,7 @@ public struct Manager<SQLite: SQLiteDBable> {
     
     static func insert<T: Tableable>(model: T) {
         SQLite.shared.open {
-            $0.execute(sql: model.updateSQL, parameters: model.values)
+            $0.execute(sql: model.insertSQL, parameters: model.values)
         }
     }
     
@@ -56,6 +56,14 @@ public struct Manager<SQLite: SQLiteDBable> {
         SQLite.shared.open {
             $0.execute(sql: model.deleteSQL, parameters: model.values)
         }
+    }
+    
+    static func update<T: Tableable>(model: T) -> [T]? {
+        SQLite.shared.open {
+            return $0.execute(sql: model.updateSQL, parameters: model.values)
+        }
+        
+        return nil
     }
 }
 

@@ -34,6 +34,10 @@ public protocol Tableable: class {
     var name: String { get }
     
     var propertys: [Property] { get }
+    
+    // I want to give a id to model when it's fetched
+    // this id will help us to update current model.
+    var _id: Int { set get }
 }
 
 extension Tableable {
@@ -46,7 +50,7 @@ extension Tableable {
     internal var createSQL: String {
         var sql =  "CREATE TABLE IF NOT EXISTS \(name)"
         sql += "("
-        sql += "id INTEGER PRIMARY KEY AUTOINCREMENT"
+        sql += "_id INTEGER PRIMARY KEY AUTOINCREMENT"
         
         propertys.forEach {
             sql += ","
@@ -57,7 +61,7 @@ extension Tableable {
         return sql
     }
     
-    internal var updateSQL: String {
+    internal var insertSQL: String {
         var sql =  "INSERT INTO \(name)"
         
         sql += propertys.reduce("(", { $0 + $1.key + ","})
@@ -75,16 +79,21 @@ extension Tableable {
     
     internal var fetchSQL: String {
         let baseSQL = "SELECT * FROM \(name)"
-        return equalSQL(withBase: baseSQL)
+        return equalSQL(withBase: baseSQL, lastKey: " WHERE ")
     }
     
     internal var deleteSQL: String {
         let baseSQL = "DELETE FROM \(name)"
-        return equalSQL(withBase: baseSQL)
+        return equalSQL(withBase: baseSQL, lastKey: " WHERE ")
     }
     
-    private func equalSQL(withBase base: String) -> String {
-        var sql = base + " WHERE "
+    internal var updateSQL: String {
+        let baseSQL = "UPDATE \(name)"
+        return equalSQL(withBase: baseSQL, lastKey: " SET ") + " WHERE id=\(_id)"
+    }
+
+    private func equalSQL(withBase base: String, lastKey: String) -> String {
+        var sql = base + lastKey
         
         propertys.forEach {
             if $0.value != nil {
@@ -93,8 +102,8 @@ extension Tableable {
             }
         }
         
-        if base.utf8.count + " WHERE ".utf8.count == sql.utf8.count {
-            sql.removeSubrange(sql.index(sql.endIndex, offsetBy: -(" WHERE ".utf8.count))..<sql.endIndex)
+        if (base + lastKey).utf8.count == sql.utf8.count {
+            sql.removeSubrange(sql.index(sql.endIndex, offsetBy: -(lastKey.utf8.count))..<sql.endIndex)
         } else {
             sql.removeSubrange(sql.index(sql.endIndex, offsetBy: -(" AND ".utf8.count))..<sql.endIndex)
         }

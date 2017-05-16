@@ -27,7 +27,7 @@ class NoDBTests: XCTestCase {
 
     func testInsertSQL() {
         
-        XCTAssertEqual(Foo().updateSQL,
+        XCTAssertEqual(Foo().insertSQL,
                        "INSERT INTO Foo(bar1,bar2) VALUES(?,?)")
     }
 
