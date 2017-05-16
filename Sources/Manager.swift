@@ -28,32 +28,24 @@
 
 import Foundation
 
-public class Manager<SQLite: SQLiteDBable> {
+public struct Manager<SQLite: SQLiteDBable> {
     
-    public var tables: [Tableable]?
-    
-    private var db: SQLite = SQLite.shared
-    
-    public func start() {
-        db.open { _ in 
+    static func start(tables: [Tableable]?) {
+        SQLite.shared.open { _ in
             tables?.forEach {
-                create(withTable: $0)
+                SQLite.shared.execute(sql: $0.createSQL, parameters: nil)
             }
         }
     }
     
-    private func create(withTable table: Tableable) {
-        db.execute(sql: table.createSQL, parameters: nil)
-    }
-    
-    func insert<T: Tableable>(model: T) {
-        db.open {
+    static func insert<T: Tableable>(model: T) {
+        SQLite.shared.open {
             $0.execute(sql: model.updateSQL, parameters: model.propertys.map { $0.value ?? "" })
         }
     }
     
-    func fetch<T: Tableable>(model: T, propertys: [Property]? = nil) -> [T]? {
-        db.open {
+    static func fetch<T: Tableable>(model: T, propertys: [Property]? = nil) -> [T]? {
+        SQLite.shared.open {
            return $0.query(sql: model.name, parameters: nil)
         }
         return []
