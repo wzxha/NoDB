@@ -31,13 +31,15 @@ import Foundation
 
 public protocol Tableable: class {
     
-    var name: String { get }
+    static var name: String { get }
     
     var propertys: [Property] { get }
     
     // I want to give a id to model when it's fetched
     // this id will help us to update current model.
-    var _id: Int { set get }
+    var _id: Int? { set get }
+    
+    init(_ dictionary: [String: Any?])
 }
 
 extension Tableable {
@@ -48,7 +50,7 @@ extension Tableable {
 
 extension Tableable {
     internal var createSQL: String {
-        var sql =  "CREATE TABLE IF NOT EXISTS \(name)"
+        var sql =  "CREATE TABLE IF NOT EXISTS \(Self.name)"
         sql += "("
         sql += "_id INTEGER PRIMARY KEY AUTOINCREMENT"
         
@@ -62,7 +64,7 @@ extension Tableable {
     }
     
     internal var insertSQL: String {
-        var sql =  "INSERT INTO \(name)"
+        var sql =  "INSERT INTO \(Self.name)"
         
         sql += propertys.reduce("(", { $0 + $1.key + ","})
         sql.remove(at: sql.index(before: sql.endIndex))
@@ -78,18 +80,23 @@ extension Tableable {
     }
     
     internal var fetchSQL: String {
-        let baseSQL = "SELECT * FROM \(name)"
+        let baseSQL = "SELECT * FROM \(Self.name)"
         return equalSQL(withBase: baseSQL, lastKey: " WHERE ")
     }
     
     internal var deleteSQL: String {
-        let baseSQL = "DELETE FROM \(name)"
+        let baseSQL = "DELETE FROM \(Self.name)"
         return equalSQL(withBase: baseSQL, lastKey: " WHERE ")
     }
     
     internal var updateSQL: String {
-        let baseSQL = "UPDATE \(name)"
-        return equalSQL(withBase: baseSQL, lastKey: " SET ") + " WHERE id=\(_id)"
+        let baseSQL = "UPDATE \(Self.name)"
+        
+        guard let id = _id else {
+            return baseSQL
+        }
+        
+        return equalSQL(withBase: baseSQL, lastKey: " SET ") + " WHERE _id=\(id)"
     }
 
     private func equalSQL(withBase base: String, lastKey: String) -> String {

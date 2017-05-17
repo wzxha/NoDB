@@ -37,7 +37,9 @@ public protocol SQLiteDBable {
     
     func execute(sql: String, parameters: [Any]?)
     
-    func query(sql: String, parameters: [Any]?)
+    func query(sql: String, parameters: [Any]?) -> [[String: Any?]]?
+    
+    func value(forColumn column: String) -> Any? 
 }
 
 internal extension SQLiteDBable {

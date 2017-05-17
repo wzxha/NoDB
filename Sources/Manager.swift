@@ -45,11 +45,26 @@ public struct Manager<SQLite: SQLiteDBable> {
     }
     
     static func fetch<T: Tableable>(model: T) -> [T]? {
-        SQLite.shared.open {
-            return $0.query(sql: model.fetchSQL, parameters: model.values)
+        
+        var result: [T]?
+        
+        SQLite.shared.open { db in
+            guard let dics = db.query(sql: model.fetchSQL, parameters: model.values) else {
+                return
+            }
+            
+            result = dics.map {
+                let model = T.init($0)
+                
+                if let id = db.value(forColumn: "_id") as? Int {
+                    model._id = id
+                }
+                
+                return model
+            }
         }
         
-        return nil
+        return result
     }
     
     static func delete<T: Tableable>(model: T) {
@@ -58,12 +73,15 @@ public struct Manager<SQLite: SQLiteDBable> {
         }
     }
     
-    static func update<T: Tableable>(model: T) -> [T]? {
-        SQLite.shared.open {
-            return $0.execute(sql: model.updateSQL, parameters: model.values)
+    static func update<T: Tableable>(model: T) {
+        guard model._id != nil else {
+            assert(true, "this model isn't fetched, so it can't update")
+            return
         }
         
-        return nil
+        SQLite.shared.open {
+            $0.execute(sql: model.updateSQL, parameters: model.values)
+        }
     }
 }
 

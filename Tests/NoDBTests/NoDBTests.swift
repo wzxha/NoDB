@@ -4,7 +4,16 @@ import XCTest
 class NoDBTests: XCTestCase {
     
     class Foo: Tableable {
-        var name: String {
+        init() {}
+        
+        required init(_ dictionary: [String : Any?]) {
+            bar1 = dictionary["bar1"] as! String
+            bar2 = dictionary["bar2"] as! String
+        }
+
+        var _id: Int?
+
+        static var name: String {
             return "Foo"
         }
         
@@ -22,7 +31,7 @@ class NoDBTests: XCTestCase {
     func testCreateSQL() {
         
         XCTAssertEqual(Foo().createSQL,
-                       "CREATE TABLE IF NOT EXISTS Foo(id INTEGER PRIMARY KEY AUTOINCREMENT,bar1 TEXT,bar2 TEXT)")
+                       "CREATE TABLE IF NOT EXISTS Foo(_id INTEGER PRIMARY KEY AUTOINCREMENT,bar1 TEXT,bar2 TEXT)")
     }
 
     func testInsertSQL() {
@@ -77,6 +86,35 @@ class NoDBTests: XCTestCase {
                        "DELETE FROM Foo WHERE bar1=? AND bar2=?")
     }
     
+    func testUpdateSQL() {
+        let foo1 = Foo()
+        foo1._id = 0
+        
+        XCTAssertEqual(foo1.updateSQL,
+                       "UPDATE Foo WHERE _id=0")
+        
+        let foo2 = Foo()
+        foo2._id = 0
+        foo2.bar1 = "bar"
+        
+        XCTAssertEqual(foo2.updateSQL,
+                       "UPDATE Foo SET bar1=? WHERE _id=0")
+        
+        let foo3 = Foo()
+        foo3._id = 0
+        foo3.bar2 = "bar"
+        XCTAssertEqual(foo3.updateSQL,
+                       "UPDATE Foo SET bar2=? WHERE _id=0")
+        
+        let foo4 = Foo()
+        foo4._id = 0
+        foo4.bar1 = "bar"
+        foo4.bar2 = "bar"
+        XCTAssertEqual(foo4.updateSQL,
+                       "UPDATE Foo SET bar1=? AND bar2=? WHERE _id=0")
+    }
+
+    
     func testValue() {
         let foo1 = Foo()
         XCTAssert(foo1.values?.count == 0)
@@ -102,6 +140,7 @@ class NoDBTests: XCTestCase {
         ("testInsertSQL", testInsertSQL),
         ("testFetchSQL", testFetchSQL),
         ("testDeleteSQL", testDeleteSQL),
+        ("testUpdateSQL", testUpdateSQL),
         
         ("testValue", testValue)
     ]
