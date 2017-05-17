@@ -7,8 +7,8 @@ class NoDBTests: XCTestCase {
         init() {}
         
         required init(_ dictionary: [String : Any?]) {
-            bar1 = dictionary["bar1"] as! String
-            bar2 = dictionary["bar2"] as! String
+            bar1 = dictionary["bar1"] as? String
+            bar2 = dictionary["bar2"] as? String
         }
 
         var _id: Int?
