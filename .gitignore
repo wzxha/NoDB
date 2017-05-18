@@ -89,3 +89,14 @@ fastlane/test_output
 /*.gcno
 
 # End of https://www.gitignore.io/api/xcode,swift
+
+# Created by https://www.gitignore.io/api/swiftPM
+
+### SwiftPM ###
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+
+# End of https://www.gitignore.io/api/swiftPM
