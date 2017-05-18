@@ -3,10 +3,20 @@
 
 Objects are persisted by SQL
 
+## Build
+
+```shell
+swift build
+```
+
+## Test
+
+```shell
+swift test
+```
+
 ## Create .xcodeproj
 
 ```shell
 swift package generate-xcodeproj
 ```
-
-
